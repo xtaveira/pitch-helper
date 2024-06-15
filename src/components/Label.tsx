@@ -19,7 +19,7 @@ const Label = ({ title, state, setState }: LabelType) => {
       <label htmlFor={title}>
         {captalizedTitle}:{" "}
         <input
-          className="text-black w-10 text-center px-1"
+          className="text-black w-20 text-center px-1"
           type="number"
           value={state}
           onChange={(e) => {
