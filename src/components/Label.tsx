@@ -1,9 +1,10 @@
+// arquivo: Label.tsx
 import React, { Dispatch, SetStateAction } from "react";
 
 type LabelType = {
   title: string;
-  state: string;
-  setState: Dispatch<SetStateAction<string>>;
+  state: number;
+  setState: Dispatch<SetStateAction<number>>;
 };
 
 const Label = ({ title, state, setState }: LabelType) => {
@@ -14,14 +15,15 @@ const Label = ({ title, state, setState }: LabelType) => {
   const captalizedTitle = capitalizeFirstLetter(title);
 
   return (
-    <div>
+    <div className="text-2xl font-bold">
       <label htmlFor={title}>
         {captalizedTitle}:{" "}
         <input
-          type="text"
+          className="text-black w-10 text-center px-1"
+          type="number"
           value={state}
           onChange={(e) => {
-            setState(e.target.value);
+            setState(Number(e.target.value));
           }}
         />
       </label>
